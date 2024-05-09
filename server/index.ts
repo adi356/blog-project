@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from 'express'
 import dotenv from 'dotenv'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
+import cors from 'cors'
 import { getAllPostsController, createBlogPostController, getBlogPostController, editBlogPostController, deleteBlogPostController } from './controllers'
 
 dotenv.config()
@@ -12,6 +13,8 @@ const port = process.env.PORT
 console.log(process.env.PORT)
 
 app.use(bodyParser())
+app.use(cors())
+
 
 // endpoints
 app.get('/all-posts', getAllPostsController)
