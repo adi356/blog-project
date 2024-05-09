@@ -1,4 +1,4 @@
-import { BlogPostModel, BlogPost } from "../schemas";
+import { BlogPostModel } from "../schemas";
 
 // get all blog posts currently held in MongoDB 
 export const getAllPosts = async () => {

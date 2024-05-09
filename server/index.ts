@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from 'express'
 import dotenv from 'dotenv'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
-import { getAllPostsController, createBlogPostController, getBlogPostController, editBlogPostController } from './controllers'
+import { getAllPostsController, createBlogPostController, getBlogPostController, editBlogPostController, deleteBlogPostController } from './controllers'
 
 dotenv.config()
 
@@ -18,6 +18,7 @@ app.get('/all-posts', getAllPostsController)
 app.get('/get-post', getBlogPostController)
 app.post('/create-post', createBlogPostController)
 app.put('/edit-post', editBlogPostController)
+app.delete('/delete-post', deleteBlogPostController)
 
 mongoose.connect(process.env.CONNECTION_STRING!).then(() => {
     app.listen(port, () => {
