@@ -26,4 +26,4 @@ const BlogPostSchema = new Schema({
     },
 })
 
-export const blogPostModel = model('BlogPost', BlogPostSchema)
+export const BlogPostModel = model('BlogPost', BlogPostSchema)
