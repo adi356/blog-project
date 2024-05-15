@@ -4,7 +4,7 @@ import { BlogPostController } from './components/BlogPostController';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ alignItems: 'center'}}>
       <BlogPostController />
     </div>
   );

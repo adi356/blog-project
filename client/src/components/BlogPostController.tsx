@@ -16,6 +16,11 @@ export const BlogPostController = () => {
 
     }
 
+    const deleteBlogPost = async (id: string) => {
+        await axios.delete(`http://localhost:3500/delete-post?id=${id}`)
+        await fetchBlogPosts()
+    }
+
     useEffect(() => {
         fetchBlogPosts()
     }, [])
@@ -34,7 +39,7 @@ export const BlogPostController = () => {
 
             {
                 blogPosts.map(blogPost => 
-                    <BlogPostView key={blogPost._id} {...blogPost} />
+                    <BlogPostView key={blogPost._id} {...blogPost} onDelete={deleteBlogPost} />
                 )
             }
         </div>

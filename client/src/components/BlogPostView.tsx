@@ -1,7 +1,9 @@
 import { Paper, Typography, Button } from '@mui/material'
 import { BlogPostType } from '../types'
 
-interface BlogPostProps extends BlogPostType {}
+interface BlogPostProps extends BlogPostType {
+    onDelete: (id: string) => void
+}
 
 export const BlogPostView = ({
     _id,
@@ -9,6 +11,7 @@ export const BlogPostView = ({
     author,
     body,
     date,
+    onDelete = () => {}
 }: BlogPostProps) => {
     
     return (
@@ -31,7 +34,7 @@ export const BlogPostView = ({
                     Edit
                 </Button>
                 <div style={{ width: '10px' }} />
-                <Button variant='outlined' color='error'>
+                <Button variant='outlined' color='error' onClick={() => onDelete(_id)}>
                     Delete
                 </Button>
 
