@@ -1,5 +1,6 @@
 import { Paper, Typography, Button } from '@mui/material'
 import { BlogPostType } from '../types'
+import { useNavigate } from 'react-router-dom'
 
 interface BlogPostProps extends BlogPostType {
     onDelete: (id: string) => void
@@ -13,7 +14,8 @@ export const BlogPostView = ({
     date,
     onDelete = () => {}
 }: BlogPostProps) => {
-    
+    const navigate = useNavigate()
+
     return (
         <Paper style = {{ width: '500px', padding: '10px', alignItems: 'center', marginTop: '10px' }}>
             <div style={{ display: 'flex'}}>
@@ -30,7 +32,7 @@ export const BlogPostView = ({
             </div>
 
             <div style={{ display: 'inline-flex', flexDirection: 'row', width: '100%' }}>
-                <Button variant='outlined'>
+                <Button variant='outlined' onClick={() => navigate(`/edit/${_id}`)}>
                     Edit
                 </Button>
                 <div style={{ width: '10px' }} />

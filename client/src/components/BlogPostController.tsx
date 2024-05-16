@@ -4,12 +4,13 @@ import { useEffect, useState } from 'react'
 import { Button, TextField } from "@mui/material"
 import { BlogPostType } from "../types"
 
+
 interface CreateBlogPostProps {
     onCreate: (title: string, body: string, author: string) => void,
     onCancel: () => void
 }
 
-export const CreateBlogPost = ({
+const CreateBlogPost = ({
     onCreate,
     onCancel
 }: CreateBlogPostProps) => {
