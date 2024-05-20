@@ -9,6 +9,7 @@
 
 ### `npm run server`
 - Ran from root directory should change to server directory and begin running back-end of app with nodemon.
+  
  * Note * Necessary to create a .env file inside server directory with PORT variable (I use 3500) and CONNECTION_STRING for mongoDB cluster before script will run properly
 
 ### `npm run client`
