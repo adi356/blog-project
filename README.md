@@ -12,7 +12,7 @@
  * Note * Necessary to create a .env file inside server directory with PORT variable (I use 3500) and CONNECTION_STRING for mongoDB cluster before script will run properly
 
 ### `npm run client`
--- Ran from root directory should change to client directory and begin running react app.
+- Ran from root directory should change to client directory and begin running react app.
 
 
 ## Video of Application being run
